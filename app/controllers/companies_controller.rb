@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CompaniesController < ApplicationController
+  skip_before_action :authenticate!, :only => [:new, :create] 
+
   def new
     @company = Company.new
     @company.subscriptions.build
@@ -13,6 +15,14 @@ class CompaniesController < ApplicationController
     else
       redirect_to new_company_registration_path
     end
+  end
+
+  def index
+    
+  end
+
+  def show
+    
   end
 
   private

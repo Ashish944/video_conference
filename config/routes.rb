@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     get 'companies/new' => 'companies#new', :as => 'new_company_registration'
     post 'companies' => 'companies#create', :as => 'company_registration'
   end
+
+  resources :companies, only: [:index, :show]
 end
