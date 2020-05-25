@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Meet Example</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src="https://meet.jit.si/external_api.js"></script>
+  <script src='http://localhost:3000/josh_meet.js'></script>
+</head>
+
+<body>
+  hello
+  <div id="meet">
+  </div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    const options = {
+      user: {
+        name: "akshay",
+        email: "akshayb@joshsoftware.com",
+        avatar_url: ""
+      },
+      width: 700,
+      height: 700,
+      parentNode: document.querySelector('#meet')
+    };
+    const api = JoshMeet(options);
+  });
+</script>
+
+</html>

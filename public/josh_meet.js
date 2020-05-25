@@ -16,32 +16,63 @@
  *  parentNode: document.querySelector('#meet')
  * };
  *
- * const api = new JoshMeet(options);
+ * const api = JoshMeet(options);
  */
 
-(function (w,d) {
+(function (w, d) {
 
   'use strict';
 
   var loader = function () {
     var s = d.createElement("script");
-    var tag = d.getElementsByTagName("script")[0];
+    var head = document.head || document.getElementsByTagName('head')[0];
     s.src = "https://meet.jit.si/external_api.js";
-    tag.parentNode.insertBefore(s,tag);
+    s.async = false
+    head.insertBefore(s, head.firstChild);
   };
 
-  if(w.addEventListener){
+  if (w.addEventListener) {
     w.addEventListener("load", loader, false);
-  }else if(w.attachEvent){
+  } else if (w.attachEvent) {
     w.attachEvent("onload", loader);
-  }else{
+  } else {
     w.onload = loader;
   }
 
-  var domain = 'meet.akshaybirajdar.com';
+  var defaultDomain = 'meet.akshaybirajdar.com';
+  var meetData = { domain: defaultDomain }
 
-  var JoshMeet = function(options) {
-    return new JitsiMeetExternalAPI(domain, options);
+  var JoshMeet = function (options, type = "new") {
+    debugger;
+    if (type == "new") {
+      fetch('http://localhost:3000/video_conferences', {
+        method: 'post',
+        headers: new Headers(
+          {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          }
+        ),
+        body: JSON.stringify({
+          user: {
+            name: options.user.name || "annon",
+            email: options.user.email || "akshayb@joshsoftware.com",
+            avatar_url: options.user.avatar_url
+          }
+        })
+      }).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        meetData = data.data
+
+        var domain = meetData.video_conference.domain || defaultDomain;
+        options.roomName = meetData.video_conference.room || options.roomName;
+
+        return new JitsiMeetExternalAPI(domain, options);
+      });
+    } else {
+      return new JitsiMeetExternalAPI(defaultDomain, options);
+    }
   };
 
   window.JoshMeet = JoshMeet;
