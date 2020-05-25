@@ -15,7 +15,7 @@
  @import "bootstrap";
 
 .nav-bar-color {
-  background-color: #008295;
+  background-color:	#0197D2;
 }
 
 body {
@@ -41,7 +41,7 @@ body {
 }
 
 body {
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%), url('Background_image.png');
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%), url('Background_image.jpg');
   background-size: cover;
 }
 
@@ -53,6 +53,7 @@ body {
   float: right;
   color: #ffffff;
   width: 30%;
+  margin-top: -220px;
   text-align: center;
   p {
     font-size: 1.6em;

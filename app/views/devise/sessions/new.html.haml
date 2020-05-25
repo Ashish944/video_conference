@@ -1,7 +1,7 @@
 %body
   #login
     %h3.text-center.text-white.pt-5
-      %b.login-bold Login
+      %b.login-bold.dark Login
     .container
       #login-row.row.justify-content-center.align-items-center
         #login-column.col-md-6
@@ -18,9 +18,9 @@
                     = f.check_box :remember_me, id: 'remember-me'
                     = f.label :remember_me, class: 'text-info'
                 .actions.text-center
-                  = f.submit "Log in", class: 'btn btn-info'
+                  = f.submit "Log in", class: 'btn btn-primary'
                   = link_to 'Register here', new_company_registration_path, class: 'btn btn-success'
-  #information-text
-    %p
-      %b Josh Software video conferencing
-      %span.powered-by powered by jitsi
+    #information-text
+      %p
+        %b Josh Software video conferencing
+        %span.powered-by powered by jitsi
