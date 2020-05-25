@@ -1,12 +1,11 @@
 %body.body-class
-  #login
-    %h3.text-center.text-white.pt-5 Register Company
+  #login.pt-5
     .container
       #login-row.row.justify-content-center.align-items-center
         #login-column.col-md-6
           #login-box.col-md-8
             = semantic_form_for(@company, method: :post, url: company_registration_path )do |f|
-              %h3.text-center.text-white Company Details
+              %h3.text-center.text-white Create Account
               %br
                 .form-group
                   .col.s12
