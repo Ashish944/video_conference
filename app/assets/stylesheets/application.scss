@@ -32,8 +32,8 @@ body {
 }
 
 #login {
-  float: left;
-  width: 70%;
+  max-width: 100%;
+  height: auto;
 }
 
 #meet {
@@ -49,14 +49,10 @@ body {
 
 }
 
-.login-bold {
-  padding-right: 159px;
-}
-
 #information-text {
-  float: right;
   color: #ffffff;
-  width: 30%;
+  max-width: 100%;
+  height: auto;
   margin-top: 120px;
   margin-right: -150px;
   text-align: center;
