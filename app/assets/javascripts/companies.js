@@ -10,5 +10,11 @@ function getMeetingDetails(name, email, password){
     }
   };
   const api = new JitsiMeetExternalAPI(domain, options);
-  api.executeCommand('password', password);
+  api.addEventListener('videoConferenceJoined', afterJoining(password));
+}
+
+
+function afterJoining(password){
+	api.executeCommand('password',password);
+	return 
 }
