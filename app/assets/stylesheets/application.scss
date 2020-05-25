@@ -13,3 +13,24 @@
  */
 
  @import "bootstrap";
+
+.nav-bar-color {
+  background-color: #17a2b8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+
+#meet {
+  text-align: center;
+}
