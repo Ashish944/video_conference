@@ -1,5 +1,5 @@
 function getMeetingDetails(name, email, password){
-  const domain = '159.89.167.38';
+  const domain = 'meet.akshaybirajdar.com';
   const options = {
       roomName: name,
       width: 1200,

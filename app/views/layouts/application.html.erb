@@ -11,6 +11,7 @@
   </head>
   <body>
     <nav class='navbar navbar-light nav-bar-color'>
+      <img src='/assets/Josh_logo.png' alt='company logo' width='155px'>
       <a class='navbar-brand text-white' href='/companies/sign_in'> Video Conference</a>
       <% if company_signed_in? %>
         <%= link_to 'Logout', destroy_company_session_path, method: :delete, class: 'navbar-brand text-white' %>

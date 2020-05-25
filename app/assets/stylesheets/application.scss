@@ -15,7 +15,7 @@
  @import "bootstrap";
 
 .nav-bar-color {
-  background-color: #17a2b8;
+  background-color: #008295;
 }
 
 body {
@@ -31,6 +31,33 @@ body {
   margin-top: -85px;
 }
 
+#login {
+  float: left;
+  width: 70%;
+}
+
 #meet {
   text-align: center;
+}
+
+body {
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%), url('Background_image.png');
+  background-size: cover;
+}
+
+.login-bold {
+  padding-right: 159px;
+}
+
+#information-text {
+  float: right;
+  color: #ffffff;
+  width: 30%;
+  text-align: center;
+  p {
+    font-size: 1.6em;
+  }
+  .powered-by {
+    font-size: 0.5em;
+  }
 }
