@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'companies#new'
+  devise_scope :company do
+    root to: 'devise/sessions#new'
+  end 
 
   devise_for :companies, :skip => [:registration], controllers: { confirmations: 'confirmation' }
   as :company do
@@ -9,5 +11,6 @@ Rails.application.routes.draw do
     post 'companies' => 'companies#create', :as => 'company_registration'
   end
 
-  resources :companies, only: [:index, :show]
+  get 'new_meeting', to: 'companies#new_meeting'
+  resources :companies, only: [:show]
 end

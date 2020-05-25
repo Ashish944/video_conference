@@ -17,12 +17,10 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def index
-    
+  def new_meeting
   end
 
   def show
-    
   end
 
   private
