@@ -40,9 +40,13 @@ body {
   text-align: center;
 }
 
-body {
+.body-class {
   background: linear-gradient(360deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%), url('Background_image.jpg');
   background-size: cover;
+  .nav-bar-color {
+    background-color: transparent;
+  }
+
 }
 
 .login-bold {
