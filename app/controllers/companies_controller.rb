@@ -21,6 +21,7 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    Meet.create(room: params['company']['name'])
   end
 
   private
