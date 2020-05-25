@@ -45,7 +45,7 @@
   var JoshMeet = function (options, type = "new") {
     debugger;
     if (type == "new") {
-      fetch('http://localhost:3000/video_conferences', {
+      fetch('https://josh-meet.herokuapp.com/video_conferences', {
         method: 'post',
         headers: new Headers(
           {
