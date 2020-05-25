@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :company do
     root to: 'devise/sessions#new'
-  end 
+  end
 
   devise_for :companies, :skip => [:registration], controllers: { confirmations: 'confirmation' }
   as :company do
@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   get 'new_meeting', to: 'companies#new_meeting'
   resources :companies, only: [:show]
+
+  resources :video_conferences, only: [:create]
 end
