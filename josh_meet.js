@@ -38,7 +38,7 @@
     w.onload = loader;
   }
 
-  var domain = 'meet.akshaybirajdar.com';
+  var domain = 'meet.jit.si';
 
   var JoshMeet = function(options) {
     return new JitsiMeetExternalAPI(domain, options);
